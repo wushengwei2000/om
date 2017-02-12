@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "koa": "^1.2.5",
+    "react-redux": "^5.0.2",
     "redux": "^3.6.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-preset-env": "^1.1.8"
   }
 }
