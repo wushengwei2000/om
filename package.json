@@ -1,11 +1,16 @@
 {
+  "scripts": {
+    "build": "babel app.js --watch -o build/app.js",
+    "start": "forever start -w --watchDirectory='build' -a -l forever.log -o app.log -e err.log build/app.js && forever logs 0 -f"
+  },
   "dependencies": {
+    "babel-register": "^6.22.0",
     "koa": "^1.2.5",
     "react-redux": "^5.0.2",
     "redux": "^3.6.0"
   },
   "devDependencies": {
     "babel-cli": "^6.22.2",
-    "babel-preset-env": "^1.1.8"
+    "babel-preset-es2015": "^6.22.0"
   }
 }

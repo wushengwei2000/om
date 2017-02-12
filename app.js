@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import koa from 'koa';
 
 const app = koa();
@@ -9,9 +10,10 @@ app.use(function *(next) {
 });
 
 app.use(function *() {
+	console.log('In controller now ....');
 	this.body = 'Hello from KOA.';
 });
 
 app.listen(3000);
 
-console.log('Server is listening at port 3000');
+console.log('Server is listening at port 3000...');
