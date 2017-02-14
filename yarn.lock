@@ -2,6 +2,43 @@
 # yarn lockfile v1
 
 
+"@f/defaults@^1.0.1":
+  version "1.0.1"
+  resolved "@f-defaults-1.0.1.tgz#6aef847a88324602f63442ab2607a8e3d5d0cc75"
+  dependencies:
+    "@f/foreach" "^1.2.0"
+
+"@f/foreach-array@^1.0.0":
+  version "1.0.0"
+  resolved "@f-foreach-array-1.0.0.tgz#163b0ae67cd1fc18d94c451da9006c3ce1ce6da8"
+
+"@f/foreach-obj@^1.0.1":
+  version "1.1.1"
+  resolved "@f-foreach-obj-1.1.1.tgz#5ad38a629c0298290a8d06a39f281d979a6804c4"
+
+"@f/foreach@^1.2.0":
+  version "1.2.2"
+  resolved "@f-foreach-1.2.2.tgz#2dd0aca6c5fe74fa965b0f46640f7623930434cd"
+  dependencies:
+    "@f/foreach-array" "^1.0.0"
+    "@f/foreach-obj" "^1.0.1"
+    "@f/is-array" "^1.1.1"
+    "@f/is-object" "^1.1.1"
+
+"@f/is-array@^1.1.1":
+  version "1.1.1"
+  resolved "@f-is-array-1.1.1.tgz#cb3cd2f20016fc7b6d7049013c0318d75a222590"
+
+"@f/is-function@^1.1.1":
+  version "1.1.1"
+  resolved "@f-is-function-1.1.1.tgz#17d342a53ef7d2ff791371c2f4fa381245ce0231"
+
+"@f/is-object@^1.1.1":
+  version "1.1.4"
+  resolved "@f-is-object-1.1.4.tgz#278ddc91bd13645ac0b73963539e0e52677b7494"
+  dependencies:
+    "@f/is-function" "^1.1.1"
+
 abbrev@1:
   version "1.0.9"
   resolved abbrev-1.0.9.tgz#91b4792588a7738c25f35dd6f63752a2f8776135
@@ -21,7 +58,7 @@ ansi-styles@^2.2.1:
   version "2.2.1"
   resolved ansi-styles-2.2.1.tgz#b432dd3358b634cf75e1e4664368240533c1ddbe
 
-any-promise@^1.1.0:
+any-promise@^1.0.0, any-promise@^1.1.0:
   version "1.3.0"
   resolved any-promise-1.3.0.tgz#abc6afeedcea52e809cdc0376aed3ce39635d17f
 
@@ -60,6 +97,10 @@ array-unique@^0.2.1:
 arrify@^1.0.0:
   version "1.0.1"
   resolved arrify-1.0.1.tgz#898508da2226f380df904728456849c1501a4b0d
+
+asap@~2.0.3:
+  version "2.0.5"
+  resolved asap-2.0.5.tgz#522765b50c3510490e52d7dcfe085ef9ba96958f
 
 asn1@~0.2.3:
   version "0.2.3"
@@ -535,6 +576,10 @@ block-stream@*:
   dependencies:
     inherits "~2.0.0"
 
+bluebird@^3.1.1:
+  version "3.4.7"
+  resolved bluebird-3.4.7.tgz#f72d760be09b7f76d08ed8fae98b289a8d05fab3
+
 boom@2.x.x:
   version "2.10.1"
   resolved boom-2.10.1.tgz#39c8918ceff5799f83f9492a848f625add0c766f
@@ -589,7 +634,22 @@ chokidar@^1.6.1:
   optionalDependencies:
     fsevents "^1.0.0"
 
-co@^4.0.2, co@^4.4.0:
+co-render@1:
+  version "1.1.0"
+  resolved co-render-1.1.0.tgz#90f465fab9dc5e236117c5804c9fcf0724e6d160
+  dependencies:
+    consolidate "^0.14.0"
+    debug "2"
+
+co-views@^2.1.0:
+  version "2.1.0"
+  resolved co-views-2.1.0.tgz#f1b24d582de6c4dc043a63acb912593d59bfa86c
+  dependencies:
+    co-render "1"
+    debug "2"
+    object-assign "4"
+
+co@^4.0.2, co@^4.4.0, co@^4.6.0:
   version "4.6.0"
   resolved co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184
 
@@ -624,6 +684,12 @@ console-control-strings@^1.0.0, console-control-strings@~1.1.0:
   version "1.1.0"
   resolved console-control-strings-1.1.0.tgz#3d7cf4464db6446ea644bf4b39507f9851008e8e
 
+consolidate@^0.14.0:
+  version "0.14.5"
+  resolved consolidate-0.14.5.tgz#5a25047bc76f73072667c8cb52c989888f494c63
+  dependencies:
+    bluebird "^3.1.1"
+
 content-disposition@~0.5.0:
   version "0.5.2"
   resolved content-disposition-0.5.2.tgz#0cf68bb9ddf5f2be7961c3a85178cb85dba78cb4
@@ -642,6 +708,10 @@ cookies@~0.6.1:
   dependencies:
     depd "~1.1.0"
     keygrip "~1.0.1"
+
+core-js@^1.0.0:
+  version "1.2.7"
+  resolved core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636
 
 core-js@^2.4.0:
   version "2.4.1"
@@ -663,7 +733,7 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
-debug@*, debug@^2.1.1, debug@^2.2.0:
+debug@*, debug@2, debug@^2.1.1, debug@^2.1.3, debug@^2.2.0, debug@^2.6.0:
   version "2.6.1"
   resolved debug-2.6.1.tgz#79855090ba2c4e3115cc7d8769491d58f0491351
   dependencies:
@@ -715,6 +785,12 @@ ee-first@1.1.1:
   version "1.1.1"
   resolved ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d
 
+encoding@^0.1.11:
+  version "0.1.12"
+  resolved encoding-0.1.12.tgz#538b66f3ee62cd1ab51ec323829d1f9480c74beb
+  dependencies:
+    iconv-lite "~0.4.13"
+
 error-inject@~1.0.0:
   version "1.0.0"
   resolved error-inject-1.0.0.tgz#e2b3d91b54aed672f309d950d154850fa11d4f37
@@ -756,6 +832,18 @@ extglob@^0.3.1:
 extsprintf@1.0.2:
   version "1.0.2"
   resolved extsprintf-1.0.2.tgz#e1080e0658e300b06294990cc70e1502235fd550
+
+fbjs@^0.8.4:
+  version "0.8.9"
+  resolved fbjs-0.8.9.tgz#180247fbd347dcc9004517b904f865400a0c8f14
+  dependencies:
+    core-js "^1.0.0"
+    isomorphic-fetch "^2.1.1"
+    loose-envify "^1.0.0"
+    object-assign "^4.1.0"
+    promise "^7.1.1"
+    setimmediate "^1.0.5"
+    ua-parser-js "^0.7.9"
 
 filename-regex@^2.0.0:
   version "2.0.0"
@@ -922,11 +1010,20 @@ hawk@~3.1.3:
     hoek "2.x.x"
     sntp "1.x.x"
 
+history@^3.0.0:
+  version "3.2.1"
+  resolved history-3.2.1.tgz#71c7497f4e6090363d19a6713bb52a1bfcdd99aa
+  dependencies:
+    invariant "^2.2.1"
+    loose-envify "^1.2.0"
+    query-string "^4.2.2"
+    warning "^3.0.0"
+
 hoek@2.x.x:
   version "2.16.3"
   resolved hoek-2.16.3.tgz#20bb7403d3cea398e91dc4710a8ff1b8274a25ed
 
-hoist-non-react-statics@^1.0.3:
+hoist-non-react-statics@^1.0.3, hoist-non-react-statics@^1.2.0:
   version "1.2.0"
   resolved hoist-non-react-statics-1.2.0.tgz#aa448cf0986d55cc40773b17174b7dd066cb7cfb
 
@@ -944,7 +1041,7 @@ http-assert@^1.1.0:
     deep-equal "~1.0.0"
     http-errors "~1.4.0"
 
-http-errors@^1.2.8:
+http-errors@^1.2.8, http-errors@~1.5.0:
   version "1.5.1"
   resolved http-errors-1.5.1.tgz#788c0d2c1de2c81b9e6e8c01843b6b97eb920750
   dependencies:
@@ -967,6 +1064,10 @@ http-signature@~1.1.0:
     jsprim "^1.2.2"
     sshpk "^1.7.0"
 
+iconv-lite@~0.4.13:
+  version "0.4.15"
+  resolved iconv-lite-0.4.15.tgz#fe265a218ac6a57cfe854927e9d04c19825eddeb
+
 inflight@^1.0.4:
   version "1.0.6"
   resolved inflight-1.0.6.tgz#49bd6331d7d02d0c09bc910a1075ba8165b56df9
@@ -986,7 +1087,7 @@ ini@~1.3.0:
   version "1.3.4"
   resolved ini-1.3.4.tgz#0537cb79daf59b59a1a517dff706c86ec039162e
 
-invariant@^2.0.0, invariant@^2.2.0:
+invariant@^2.0.0, invariant@^2.2.0, invariant@^2.2.1:
   version "2.2.2"
   resolved invariant-2.2.2.tgz#9e1f56ac0acdb6bf303306f338be3b204ae60360
   dependencies:
@@ -1065,6 +1166,10 @@ is-property@^1.0.0:
   version "1.0.2"
   resolved is-property-1.0.2.tgz#57fe1c4e48474edd65b09911f26b1cd4095dda84
 
+is-stream@^1.0.1:
+  version "1.1.0"
+  resolved is-stream-1.1.0.tgz#12d4a3dd4e68e0b79ceb8dbc84173ae80d91ca44
+
 is-typedarray@~1.0.0:
   version "1.0.0"
   resolved is-typedarray-1.0.0.tgz#e479c80858df0c1b11ddda6940f96011fcda4a9a
@@ -1078,6 +1183,13 @@ isobject@^2.0.0:
   resolved isobject-2.1.0.tgz#f065561096a3f1da2ef46272f815c840d87e0c89
   dependencies:
     isarray "1.0.0"
+
+isomorphic-fetch@^2.1.1:
+  version "2.2.1"
+  resolved isomorphic-fetch-2.2.1.tgz#611ae1acf14f5e81f729507472819fe9733558a9
+  dependencies:
+    node-fetch "^1.0.1"
+    whatwg-fetch ">=0.10.0"
 
 isstream@~0.1.2:
   version "0.1.2"
@@ -1147,6 +1259,24 @@ koa-is-json@^1.0.0:
   version "1.0.0"
   resolved koa-is-json-1.0.0.tgz#273c07edcdcb8df6a2c1ab7d59ee76491451ec14
 
+koa-send@^3.1.0:
+  version "3.3.0"
+  resolved koa-send-3.3.0.tgz#5a4ae245564680c6ecf6079e9275fa5173a861dc
+  dependencies:
+    co "^4.6.0"
+    debug "^2.6.0"
+    mz "^2.3.1"
+    resolve-path "^1.3.1"
+
+koa-views@4.1.0:
+  version "4.1.0"
+  resolved koa-views-4.1.0.tgz#472a89e273f1a7980e3ee7c65c89ab26d9c831dd
+  dependencies:
+    "@f/defaults" "^1.0.1"
+    co-views "^2.1.0"
+    debug "^2.1.3"
+    koa-send "^3.1.0"
+
 koa@^1.2.5:
   version "1.2.5"
   resolved koa-1.2.5.tgz#2b1bf59dc1f2fdd7b756e8a4f11a55eb57db6a09
@@ -1183,7 +1313,7 @@ lodash@^4.2.0, lodash@^4.2.1:
   version "4.17.4"
   resolved lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae
 
-loose-envify@^1.0.0, loose-envify@^1.1.0:
+loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.2.0:
   version "1.3.1"
   resolved loose-envify-1.3.1.tgz#d1a8ad33fa9ce0e713d65fdd0ac8b748d478c848
   dependencies:
@@ -1249,6 +1379,14 @@ ms@0.7.2:
   version "0.7.2"
   resolved ms-0.7.2.tgz#ae25cf2512b3885a1d95d7f037868d8431124765
 
+mz@^2.3.1:
+  version "2.6.0"
+  resolved mz-2.6.0.tgz#c8b8521d958df0a4f2768025db69c719ee4ef1ce
+  dependencies:
+    any-promise "^1.0.0"
+    object-assign "^4.0.1"
+    thenify-all "^1.0.0"
+
 nan@^2.3.0:
   version "2.5.1"
   resolved nan-2.5.1.tgz#d5b01691253326a97a2bbee9e61c55d8d60351e2
@@ -1256,6 +1394,13 @@ nan@^2.3.0:
 negotiator@0.6.1:
   version "0.6.1"
   resolved negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9
+
+node-fetch@^1.0.1:
+  version "1.6.3"
+  resolved node-fetch-1.6.3.tgz#dc234edd6489982d58e8f0db4f695029abcd8c04
+  dependencies:
+    encoding "^0.1.11"
+    is-stream "^1.0.1"
 
 node-pre-gyp@^0.6.29:
   version "0.6.33"
@@ -1298,7 +1443,7 @@ oauth-sign@~0.8.1:
   version "0.8.2"
   resolved oauth-sign-0.8.2.tgz#46a6ab7f0aead8deae9ec0565780b7d4efeb9d43
 
-object-assign@^4.1.0:
+object-assign@4, object-assign@^4.0.1, object-assign@^4.1.0:
   version "4.1.1"
   resolved object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863
 
@@ -1360,7 +1505,7 @@ parseurl@^1.3.0:
   version "1.3.1"
   resolved parseurl-1.3.1.tgz#c8ab8c9223ba34888aa64a297b28853bec18da56
 
-path-is-absolute@^1.0.0:
+path-is-absolute@1.0.1, path-is-absolute@^1.0.0:
   version "1.0.1"
   resolved path-is-absolute-1.0.1.tgz#174b9268735534ffbc7ace6bf53a5a9e1b5c5f5f
 
@@ -1386,6 +1531,12 @@ process-nextick-args@~1.0.6:
   version "1.0.7"
   resolved process-nextick-args-1.0.7.tgz#150e20b756590ad3f91093f25a4f2ad8bff30ba3
 
+promise@^7.1.1:
+  version "7.1.1"
+  resolved promise-7.1.1.tgz#489654c692616b8aa55b0724fa809bb7db49c5bf
+  dependencies:
+    asap "~2.0.3"
+
 punycode@^1.4.1:
   version "1.4.1"
   resolved punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e
@@ -1393,6 +1544,13 @@ punycode@^1.4.1:
 qs@~6.3.0:
   version "6.3.0"
   resolved qs-6.3.0.tgz#f403b264f23bc01228c74131b407f18d5ea5d442
+
+query-string@^4.2.2:
+  version "4.3.1"
+  resolved query-string-4.3.1.tgz#54baada6713eafc92be75c47a731f2ebd09cd11d
+  dependencies:
+    object-assign "^4.1.0"
+    strict-uri-encode "^1.0.0"
 
 randomatic@^1.1.3:
   version "1.1.6"
@@ -1419,6 +1577,24 @@ react-redux@^5.0.2:
     lodash "^4.2.0"
     lodash-es "^4.2.0"
     loose-envify "^1.1.0"
+
+react-router@^3.0.2:
+  version "3.0.2"
+  resolved react-router-3.0.2.tgz#5a19156678810e01d81901f9c0fef63284b8a514
+  dependencies:
+    history "^3.0.0"
+    hoist-non-react-statics "^1.2.0"
+    invariant "^2.2.1"
+    loose-envify "^1.2.0"
+    warning "^3.0.0"
+
+react@^15.4.2:
+  version "15.4.2"
+  resolved react-15.4.2.tgz#41f7991b26185392ba9bae96c8889e7e018397ef
+  dependencies:
+    fbjs "^0.8.4"
+    loose-envify "^1.1.0"
+    object-assign "^4.1.0"
 
 "readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.0.2:
   version "2.2.2"
@@ -1542,6 +1718,13 @@ request@^2.79.0:
     tunnel-agent "~0.4.1"
     uuid "^3.0.0"
 
+resolve-path@^1.3.1:
+  version "1.3.3"
+  resolved resolve-path-1.3.3.tgz#4d83aba6468c2b8e632a575e3f52b0fa0dbe1a5c
+  dependencies:
+    http-errors "~1.5.0"
+    path-is-absolute "1.0.1"
+
 rimraf@2, rimraf@~2.5.1, rimraf@~2.5.4:
   version "2.5.4"
   resolved rimraf-2.5.4.tgz#96800093cbf1a0c86bd95b4625467535c29dfa04
@@ -1559,6 +1742,10 @@ set-blocking@~2.0.0:
 set-immediate-shim@^1.0.1:
   version "1.0.1"
   resolved set-immediate-shim-1.0.1.tgz#4b2b1b27eb808a9f8dcc481a58e5e56f599f3f61
+
+setimmediate@^1.0.5:
+  version "1.0.5"
+  resolved setimmediate-1.0.5.tgz#290cbb232e306942d7d7ea9b83732ab7856f8285
 
 setprototypeof@1.0.2:
   version "1.0.2"
@@ -1606,6 +1793,10 @@ sshpk@^1.7.0:
 "statuses@>= 1.2.1 < 2", "statuses@>= 1.3.1 < 2", statuses@^1.2.0:
   version "1.3.1"
   resolved statuses-1.3.1.tgz#faf51b9eb74aaef3b3acf4ad5f61abf24cb7b93e
+
+strict-uri-encode@^1.0.0:
+  version "1.1.0"
+  resolved strict-uri-encode-1.1.0.tgz#279b225df1d582b1f54e65addd4352e18faa0713
 
 string-width@^1.0.1:
   version "1.0.2"
@@ -1662,6 +1853,18 @@ tar@~2.2.1:
     fstream "^1.0.2"
     inherits "2"
 
+thenify-all@^1.0.0:
+  version "1.6.0"
+  resolved thenify-all-1.6.0.tgz#1a1918d402d8fc3f98fbf234db0bcc8cc10e9726
+  dependencies:
+    thenify ">= 3.1.0 < 4"
+
+"thenify@>= 3.1.0 < 4":
+  version "3.2.1"
+  resolved thenify-3.2.1.tgz#251fd1c80aff6e5cf57cb179ab1fcb724269bd11
+  dependencies:
+    any-promise "^1.0.0"
+
 to-fast-properties@^1.0.1:
   version "1.0.2"
   resolved to-fast-properties-1.0.2.tgz#f3f5c0c3ba7299a7ef99427e44633257ade43320
@@ -1686,6 +1889,10 @@ type-is@^1.5.5:
   dependencies:
     media-typer "0.3.0"
     mime-types "~2.1.13"
+
+ua-parser-js@^0.7.9:
+  version "0.7.12"
+  resolved ua-parser-js-0.7.12.tgz#04c81a99bdd5dc52263ea29d24c6bf8d4818a4bb
 
 uid-number@~0.0.6:
   version "0.0.6"
@@ -1718,6 +1925,16 @@ verror@1.3.6:
   resolved verror-1.3.6.tgz#cff5df12946d297d2baaefaa2689e25be01c005c
   dependencies:
     extsprintf "1.0.2"
+
+warning@^3.0.0:
+  version "3.0.0"
+  resolved warning-3.0.0.tgz#32e5377cb572de4ab04753bdf8821c01ed605b7c
+  dependencies:
+    loose-envify "^1.0.0"
+
+whatwg-fetch@>=0.10.0:
+  version "2.0.2"
+  resolved whatwg-fetch-2.0.2.tgz#fe294d1d89e36c5be8b3195057f2e4bc74fc980e
 
 wide-align@^1.1.0:
   version "1.1.0"

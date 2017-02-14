@@ -1,12 +1,15 @@
 {
   "scripts": {
-    "build": "babel app.js --watch -o build/app.js",
-    "start": "forever start -w --watchDirectory='build' -a -l forever.log -o app.log -e err.log build/app.js && forever logs 0 -f"
+    "build": "babel --watch src --out-dir build --copy-files",
+    "start": "forever start -w --watchDirectory='build' -p ./ -a -l logs/forever.log -o logs/app.log -e logs/err.log build/app.js && forever logs 0 -f"
   },
   "dependencies": {
     "babel-register": "^6.22.0",
     "koa": "^1.2.5",
+    "koa-views": "4.1.0",
+    "react": "^15.4.2",
     "react-redux": "^5.0.2",
+    "react-router": "^3.0.2",
     "redux": "^3.6.0"
   },
   "devDependencies": {
