@@ -1,11 +1,16 @@
 import 'babel-polyfill';
 import koa from 'koa';
+import staticResource from 'koa-static';
 import views from 'koa-views';
+import rootRouter from './core/root';
+import apiRouter from './api/apiRouter';
 
 const app = koa();
+const port = process.env.PORT || 3000;
+
+app.use(staticResource(__dirname + '/public'));
 
 app.use(views(__dirname + '/views', {
-	// map: {html: 'nunjucks'}
 }));
 
 app.use(function *(next) {
@@ -14,12 +19,11 @@ app.use(function *(next) {
 	console.log('Exiting middleware ');
 });
 
-app.use(function *() {
-	console.log('In controller now ....');
-	this.body = 'Hello from KOA.';
-	yield this.render('index.html');
-});
+app.use(rootRouter.routes());
 
-app.listen(3000);
+app.use(apiRouter.routes());
 
-console.log('Server is listening at port 3000...');
+
+app.listen(port);
+console.log(`Server is listening at port ${port}...`);
+
