@@ -3,7 +3,7 @@
     "build": "babel --watch src --out-dir build --copy-files",
     "build:dist": "babel src --out-dir build --copy-files",
     "start": "forever start -w --watchDirectory='build' -p ./ -a -l logs/forever.log -o logs/app.log -e logs/err.log build/app.js && forever logs 0 -f",
-    "start:dist": "forever start -p ./ -a -l logs/forever.log -o logs/app.log -e logs/err.log build/app.js"
+    "start:dist": "mkdir logs && forever start -p ./ -a -l logs/forever.log -o logs/app.log -e logs/err.log build/app.js"
   },
   "dependencies": {
     "babel-register": "^6.22.0",
